@@ -11,7 +11,7 @@ const AdminSchema = new mongoose.Schema({
 
 const UserSchema= new mongoose.Schema({
     username:String,
-    password:String
+    password:String,
     purchasedCourses: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Course'
@@ -23,9 +23,9 @@ const CourseSchema=new mongoose.Schema({
     imgLink:String,
     price:Number
 })
-const Admin= mongoose.Model('Admin',AdminSchema);
-const User=mongoose.Model('User',UserSchema);
-const Course=mongoose.Model('Course',CourseSchema);
+const Admin= mongoose.model('Admin',AdminSchema);
+const User=mongoose.model('User',UserSchema);
+const Course=mongoose.model('Course',CourseSchema);
  module.exports={
     Admin,
     User,

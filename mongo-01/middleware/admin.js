@@ -14,7 +14,7 @@ Admin.findOne({
         next()
     } else{
         res.status(403).json({
-            msg:"Admin not exsit";
+            msg:"Admin not exsit"
         })
     }
 })
