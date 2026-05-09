@@ -63,4 +63,23 @@ router.get('/purchasedCourses', userMiddleware, async (req, res) => {
     })
 });
 
+
+router.get('/total-users', async (req, res) => {
+    try {
+
+        const totalUsers = await User.countDocuments();
+
+        res.json({
+            totalUsers
+        });
+
+    } catch (err) {
+
+        res.status(500).json({
+            message: "Error fetching total users"
+        });
+
+    }
+});
+
 module.exports = router
